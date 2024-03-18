@@ -1,0 +1,111 @@
+class bool {
+    explicit typeof => EZCodeLanguage.EZCode.DataType("bool")
+    explicit params => set : PARAMS
+    undefined Value
+    method set : val {
+        = val
+    }
+    nocol method = : @bool:val {
+        Value => runexec EZCodeLanguage.EZHelp.ObjectParse ~> {val}, bool
+    }
+    nocol method ! {
+        Value => runexec EZCodeLanguage.EZHelp.Compare ~> not, {val}
+    }
+}
+class float {
+    explicit typeof => EZCodeLanguage.EZCode.DataType("float")
+    explicit params => set : PARAMS
+    undefined Value
+    method set : @float:num {
+        = num
+    }
+    nocol method = : @float:val {
+        Value => runexec EZCodeLanguage.EZHelp.ObjectParse ~> {val}, float
+    }
+    nocol method + : @float:val {
+        Value => runexec EZCodeLanguage.EZHelp.Add ~> {Value}, {val}
+    }
+    nocol method - : @float:val {
+        Value => runexec EZCodeLanguage.EZHelp.Subtract ~> {Value}, {val}
+    }
+    nocol method * : @float:val {
+        Value => runexec EZCodeLanguage.EZHelp.Multiply ~> {Value}, {val}
+    }
+    nocol method / : @float:val {
+        Value => runexec EZCodeLanguage.EZHelp.Divide ~> {Value}, {val}
+    }
+}
+class int {
+    explicit typeof => EZCodeLanguage.EZCode.DataType("int")
+    explicit params => set : PARAMS
+    undefined Value
+    method set : @int:num {
+        = num
+    }
+    nocol method = : @int:val {
+        Value => runexec EZCodeLanguage.EZHelp.ObjectParse ~> {val}, int
+    }
+    nocol method + : @int:val {
+        Value => runexec EZCodeLanguage.EZHelp.Add ~> {Value}, {val}
+    }
+    nocol method - : @int:val {
+        Value => runexec EZCodeLanguage.EZHelp.Subtract ~> {Value}, {val}
+    }
+    nocol method * : @int:val {
+        Value => runexec EZCodeLanguage.EZHelp.Multiply ~> {Value}, {val}
+    }
+    nocol method / : @int:val {
+        Value => runexec EZCodeLanguage.EZHelp.Divide ~> {Value}, {val}
+    }
+}
+class str {
+    explicit alias string
+    explicit typeof => EZCodeLanguage.EZCode.DataType("string")
+    explicit watch "(.*? {text})" => set : text
+    explicit params => set : PARAMS
+    undefined Value
+    method set : text {
+        = text
+    }
+    nocol method = : @str:text => @str {
+        Value => format : text
+    }
+    nocol method + : @str:text {
+        Value => runexec EZCodeLanguage.EZHelp.StringMod ~> {Value}, {text}, +
+    }
+    nocol method - : @str:text {
+        Value => runexec EZCodeLanguage.EZHelp.StringMod ~> {Value}, {text}, -
+    }
+    nocol method * : @str:text {
+        Value => runexec EZCodeLanguage.EZHelp.StringMod ~> {Value}, {text}, *
+    }
+    nocol method / : @str:text {
+        Value => runexec EZCodeLanguage.EZHelp.StringMod ~> {Value}, {text}, /
+    }
+    method format : @str:text => @str {
+        return runexec EZCodeLanguage.EZHelp.Format ~> {text}
+    }
+}
+class expressions {
+    explicit watch \((.* {EXP})\) => expression : EXP
+    undefined Value
+    method expression : vals {
+        Value => runexec EZCodeLanguage.EZHelp.ObjectParse ~> {vals}, str
+    }
+    get => @bool {
+        return runexec EZCodeLanguage.EZHelp.Expression ~> {Value}
+    }
+    get => @float {
+        return runexec EZCodeLanguage.EZHelp.Operate ~> {Value}
+    }
+    get => @int {
+        return runexec EZCodeLanguage.EZHelp.Operate ~> {Value}
+    }
+    get => @str {
+        return runexec EZCodeLanguage.EZHelp.StringExpression ~> {Value}
+    }
+}
+nocol method print : @str:text {
+    runexec EZCodeLanguage.EZHelp.Print ~> {text}
+}
+print hi
