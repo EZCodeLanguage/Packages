@@ -366,3 +366,6 @@ global method input => @str {
 global method istype : __val, __type => @bool {
     return runexec EZCodeLanguage.EZHelp.IsType ~> {__val}, {__type}
 }
+global method regexmatch : @str:__val, @str:__match => @bool {
+    return runexec EZCodeLanguage.EZHelp.RegexMatch ~> {__val}, {__match}
+}
