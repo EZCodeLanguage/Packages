@@ -1,0 +1,27 @@
+nocol method add : obj1, obj2 => @float {
+    return runexec EZCodeLanguage.EZHelp.Add ~> {obj1}, {obj2}
+}
+nocol method subtract : obj1, obj2 => @float {
+    return runexec EZCodeLanguage.EZHelp.Subtract ~> {obj1}, {obj2}
+}
+nocol method multiply : obj1, obj2 => @float {
+    return runexec EZCodeLanguage.EZHelp.Multiply ~> {obj1}, {obj2}
+}
+nocol method divide : obj1, obj2 => @float {
+    return runexec EZCodeLanguage.EZHelp.Divide ~> {obj1}, {obj2}
+}
+nocol method avg : ! @float:nums => @float {
+    return runexec EZCodeLanguage.EZHelp.Average ~> {nums}
+}
+nocol method clamp : @float:val, @float:min, @float:max => @float {
+    return runexec EZCodeLanguage.EZHelp.Clamp ~> {val}, {min}, {max}
+}
+method pi => @float {
+    return runexec EZCodeLanguage.EZHelp.Pi
+}
+method logbase-e => @float {
+    return runexec EZCodeLanguage.EZHelp.E
+}
+nocol method operate : @str:op, ! @float:obj => @float {
+    return runexec EZCodeLanguage.EZHelp.MathFunc ~> {obj}, {op}
+}

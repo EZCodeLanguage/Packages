@@ -1,0 +1,7 @@
+{
+    "Name":"winforms",
+    "Files": [
+        "winforms.ezcode"
+    ],
+    "LibraryDirectory":"WinFormsEZCodeLibrary\\bin\\Debug\\net8.0-windows\\"
+}

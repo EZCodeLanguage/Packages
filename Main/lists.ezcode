@@ -1,0 +1,24 @@
+class list {
+    explicit params => set : PARAMS
+    undefined Value
+    method set : values {
+        if istype : #values, list {
+            Value => values
+        }
+        else {
+            Value => runexec EZCodeLanguage.EZHelp.ArrayParse ~> {values}, ;
+        }
+    }
+    get => @str {
+        return runexec EZCodeLanguage.EZHelp.ArrayStringParse ~> {Value}
+    }
+    method length {
+        return runexec EZCodeLanguage.EZHelp.ArrayLength ~> {Value}
+    }
+    method append : values {
+        Value => runexec EZCodeLanguage.EZHelp.ArrayAppend ~> {Value}, {values}, ;
+    }
+    method index : @int:i {
+        return runexec EZCodeLanguage.EZHelp.ArrayIndex ~> {Value}, {i}
+    }
+}

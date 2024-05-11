@@ -11,6 +11,18 @@ class bool {
     nocol method ! {
         Value => runexec EZCodeLanguage.EZHelp.Compare ~> not, {val}
     }
+    method istype : val => @bool {
+        try {
+            runexec EZCodeLanguage.EZHelp.BoolParse ~> {val}
+            return true
+        }
+        fail {
+            return false
+        }
+    }
+    method parse : val => @bool {
+        return EZCodeLanguage.EZHelp.BoolParse ~> {val}
+    }
 }
 class float {
     explicit typeof => EZCodeLanguage.EZCode.DataType("float")
@@ -34,6 +46,39 @@ class float {
     nocol method / : @float:val {
         Value => runexec EZCodeLanguage.EZHelp.Divide ~> {Value}, {val}
     }
+    nocol method ^ : @float:val {
+        Value => runexec EZCodeLanguage.EZHelp.Power ~> {Value}, {val}
+    }
+    method istype : val => @bool {
+        try {
+            runexec EZCodeLanguage.EZHelp.FloatParse ~> {val}
+            return true
+        }
+        fail {
+            return false
+        }
+    }
+    method parse : val => @float {
+        return EZCodeLanguage.EZHelp.FloatParse ~> {val}
+    }
+    nocol method < : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, <, {val}
+    }
+    nocol method > : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, >, {val}
+    }
+    nocol method <= : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, <=, {val}
+    }
+    nocol method >= : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, >=, {val}
+    }
+    nocol method != : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, !=, {val}
+    }
+    nocol method == : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, =, {val}
+    }
 }
 class int {
     explicit typeof => EZCodeLanguage.EZCode.DataType("int")
@@ -56,6 +101,39 @@ class int {
     }
     nocol method / : @int:val {
         Value => runexec EZCodeLanguage.EZHelp.Divide ~> {Value}, {val}
+    }
+    nocol method ^ : @float:val {
+        Value => runexec EZCodeLanguage.EZHelp.Power ~> {Value}, {val}
+    }
+    method istype : val => @bool {
+        try {
+            runexec EZCodeLanguage.EZHelp.IntParse ~> {val}
+            return true
+        }
+        fail {
+            return false
+        }
+    }
+    method parse : val => @int {
+        return EZCodeLanguage.EZHelp.IntParse ~> {val}
+    }
+    nocol method < : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, <, {val}
+    }
+    nocol method > : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, >, {val}
+    }
+    nocol method <= : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, <=, {val}
+    }
+    nocol method >= : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, >=, {val}
+    }
+    nocol method != : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, !=, {val}
+    }
+    nocol method == : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, =, {val}
     }
 }
 class str {
@@ -85,6 +163,166 @@ class str {
     method format : @str:text => @str {
         return runexec EZCodeLanguage.EZHelp.Format ~> {text}
     }
+    method parse : val => @str {
+        return runexec EZCodeLanguage.EZHelp.StringParse ~> {val}
+    }
+    method length {
+        return stringlength : Value
+    }
+    method stringlength : val {
+        return runexec EZCodeLanguage.EZHelp.StringLength ~> {val}
+    }
+    nocol method < : val => @bool {
+        int length new : Value length
+        int comp_length new
+        try {
+            comp_length = val
+        }
+        fail {
+            comp_length = stringlength : val
+        }
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {length}, <, {val}
+    }
+    nocol method > : val => @bool {
+        int length new : Value length
+        int comp_length new
+        try {
+            comp_length = val
+        }
+        fail {
+            comp_length = stringlength : val
+        }
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {length}, >, {val}
+    }
+    nocol method <= : val => @bool {
+        int length new : Value length
+        int comp_length new
+        try {
+            comp_length = val
+        }
+        fail {
+            comp_length = stringlength : val
+        }
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {length}, <=, {val}
+    }
+    nocol method >= : val => @bool {
+        int length new : Value length
+        int comp_length new
+        try {
+            comp_length = val
+        }
+        fail {
+            comp_length = stringlength : val
+        }
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {length}, >=, {val}
+    }
+    nocol method != : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, !=, {val}
+    }
+    nocol method == : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, =, {val}
+    }
+    method lower : @str:text => @str {
+        return runexec EZCodeLanguage.EZHelp.ToLower ~> {text}
+    }
+    method upper : @str:text => @str {
+        return runexec EZCodeLanguage.EZHelp.ToUpper ~> {text}
+    }
+    method replace : @str:text, @str:older, @str:newwer => @str {
+        return runexec EZCodeLanguage.EZHelp.Replace ~> {text}, {older}, {newwer}
+    }
+    method trim : @str:text => @str {
+        return runexec EZCodeLanguage.EZHelp.Trim ~> {text}
+    }
+    method substring : @str:text, @int:index, @int:length => @str {
+        return runexec EZCodeLanguage.EZHelp.Substring ~> {text}, {index}, {length}
+    }
+    method startswith : @str:text, @str:val => @bool {
+        return runexec EZCodeLanguage.EZHelp.StartsWith ~> {text}, {val}
+    }
+    method endswith : @str:text, @str:val => @bool {
+        return runexec EZCodeLanguage.EZHelp.EndsWith ~> {text}, {val}
+    }
+}
+class var {
+    explicit params => set : PARAMS
+    undefined Value
+    method set : val {
+        = val
+    }
+    nocol method = : val {
+        Value => runexec EZCodeLanguage.EZHelp.ObjectParse ~> {val}, str
+    }
+    nocol method + : val {
+        try {
+            Value => runexec EZCodeLanguage.EZHelp.Add ~> {Value}, {val}
+        }
+        fail {
+            Value => runexec EZCodeLanguage.EZHelp.StringMod ~> {Value}, {val}, +
+        }
+    }
+    nocol method - : val {
+        try {
+            Value => runexec EZCodeLanguage.EZHelp.Subtract ~> {Value}, {val}
+        }
+        fail {
+            Value => runexec EZCodeLanguage.EZHelp.StringMod ~> {Value}, {val}, -
+        }
+    }
+    nocol method * : val {
+        try {
+            Value => runexec EZCodeLanguage.EZHelp.Multiply ~> {Value}, {val}
+        }
+        fail {
+            Value => runexec EZCodeLanguage.EZHelp.StringMod ~> {Value}, {val}, *
+        }
+    }
+    nocol method / : val {
+        try {
+            Value => runexec EZCodeLanguage.EZHelp.Divide ~> {Value}, {val}
+        }
+        fail {
+            Value => runexec EZCodeLanguage.EZHelp.StringMod ~> {Value}, {val}, /
+        }
+    }
+    get => @str {
+        return Value
+    }
+    get => @bool {
+        return runexec EZCodeLanguage.EZHelp.ObjectParse ~> {Value}, bool
+    }
+    get => @int {
+        return runexec EZCodeLanguage.EZHelp.ObjectParse ~> {Value}, int
+    }
+    get => @float {
+        return runexec EZCodeLanguage.EZHelp.ObjectParse ~> {Value}, float
+    }
+    get => @var {
+        try {
+            return runexec EZCodeLanguage.EZHelp.ObjectParse ~> {Value}, float
+        }
+        fail {
+            return Value
+        }
+    }
+    nocol method < : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, <, {val}
+    }
+    nocol method > : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, >, {val}
+    }
+    nocol method <= : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, <=, {val}
+    }
+    nocol method >= : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, >=, {val}
+    }
+    nocol method != : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, !=, {val}
+    }
+    nocol method == : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, =, {val}
+    }
 }
 class expressions {
     explicit watch \((.* {EXP})\) => expression : EXP
@@ -104,8 +342,27 @@ class expressions {
     get => @str {
         return runexec EZCodeLanguage.EZHelp.StringExpression ~> {Value}
     }
+    get => @var {
+        try {
+            return runexec EZCodeLanguage.EZHelp.ObjectParse ~> {Value}, float
+        }
+        fail {
+            return runexec EZCodeLanguage.EZHelp.ObjectParse ~> {Value}, str
+        }
+    }
 }
-nocol method print : @str:text {
-    runexec EZCodeLanguage.EZHelp.Print ~> {text}
+global nocol method print : ! @str:__text {
+    runexec EZCodeLanguage.EZHelp.Print ~> {__text}
 }
-print hi
+global method runcode : @str:__code {
+    runexec EZCodeLanguage.EZHelp.RunEZCode ~> {__code}
+}
+global method clear {
+    runexec EZCodeLanguage.EZHelp.Clear
+}
+global method input => @str {
+    return runexec EZCodeLanguage.EZHelp.Input
+}
+global method istype : __val, __type => @bool {
+    return runexec EZCodeLanguage.EZHelp.IsType ~> {__val}, {__type}
+}

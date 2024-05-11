@@ -1,0 +1,30 @@
+class window {
+    undefined window_internal
+    undefined x => 0
+    undefined y => 0
+    undefined width => 600
+    undefined height => 400
+    undefined title => Window
+    get => @str {
+        return title
+    }
+    get => @window {
+        return window_internal
+    }
+    nocol method open {
+        // create instance
+        window_internal => runexec WinFormsEZCodeLibrary.dll.WinFormsEZCodeLibrary.WinForms.CreateWindowInstance ~> {x}, {y}, {width}, {height}, {title}
+        // open window
+        runexec WinFormsEZCodeLibrary.dll.WinFormsEZCodeLibrary.WinForms.OpenWindow {window_internal} 
+    }
+    nocol method close {
+        // close window
+        runexec WinFormsEZCodeLibrary.dll.WinFormsEZCodeLibrary.WinForms.CloseWindow {window_internal} 
+    }
+}
+method runapp : __window {
+    runexec WinFormsEZCodeLibrary.dll.WinFormsEZCodeLibrary.WinForms.StartApplication ~> {__window}
+}
+method defaultsettings {
+    runexec WinFormsEZCodeLibrary.dll.WinFormsEZCodeLibrary.WinForms.EnableDefaultSettings
+}

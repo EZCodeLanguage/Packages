@@ -1,0 +1,12 @@
+﻿namespace WinFormsEZCodeLibrary
+{
+    static class Program
+    {
+        public static void Main(string[] args)
+        {
+            WinForms.EnableDefaultSettings();
+            var window = WinForms.CreateWindowInstance(10, 10, 60, 60, "hgu");
+            WinForms.StartApplication(window);
+        }
+    }
+}
