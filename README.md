@@ -1,0 +1,16 @@
+# EZCode Packages
+
+All of System EZCode packages. 
+- [Main](Main/package.json): Includes main functionality for EZCode (automatically included in build)
+   - `bool`, `str`, `float`, `int`, `expressions`, `var`, and `list` classes
+   - `print`, `input`, `runcode`, `clear`, `regexmatch`, and `istype` methods
+   - basic math functions including:
+     - `add` add numbers
+     - `subtract` subtract numbers
+     - `multiply` multiply numbers
+     - `divide` divide numbers
+     - `pi` pi constant
+     - `clamp` clamp number between 2 numbers 
+     - `avg` average of numbers
+     - `operate` everything in MathF from C# class.
+- [WinForms](WinForms/package.json): Adds Windows Forms Support (not currently supported)
