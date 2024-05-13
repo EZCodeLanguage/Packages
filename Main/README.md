@@ -13,7 +13,7 @@ Contains the basic functionality for EZCode (automatically included in build).
   - `avg` average of numbers
   - `operate` everything in MathF from C# class.
   
-```json
+```
 bool b new : True
 str s new : Hello World
 float f new : 1.23
