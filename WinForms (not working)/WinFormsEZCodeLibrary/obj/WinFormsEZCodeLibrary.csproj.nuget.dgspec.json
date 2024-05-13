@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\EZCodeLanguage\\Packages\\WinForms\\WinFormsEZCodeLibrary\\WinFormsEZCodeLibrary.csproj": {}
+    "D:\\EZCodeLanguage\\Packages\\WinForms (not working)\\WinFormsEZCodeLibrary\\WinFormsEZCodeLibrary.csproj": {}
   },
   "projects": {
     "D:\\EZCodeLanguage\\EZCode\\EZCode\\EZCode.csproj": {
@@ -74,14 +74,14 @@
         }
       }
     },
-    "D:\\EZCodeLanguage\\Packages\\WinForms\\WinFormsEZCodeLibrary\\WinFormsEZCodeLibrary.csproj": {
+    "D:\\EZCodeLanguage\\Packages\\WinForms (not working)\\WinFormsEZCodeLibrary\\WinFormsEZCodeLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EZCodeLanguage\\Packages\\WinForms\\WinFormsEZCodeLibrary\\WinFormsEZCodeLibrary.csproj",
+        "projectUniqueName": "D:\\EZCodeLanguage\\Packages\\WinForms (not working)\\WinFormsEZCodeLibrary\\WinFormsEZCodeLibrary.csproj",
         "projectName": "WinFormsEZCodeLibrary",
-        "projectPath": "D:\\EZCodeLanguage\\Packages\\WinForms\\WinFormsEZCodeLibrary\\WinFormsEZCodeLibrary.csproj",
+        "projectPath": "D:\\EZCodeLanguage\\Packages\\WinForms (not working)\\WinFormsEZCodeLibrary\\WinFormsEZCodeLibrary.csproj",
         "packagesPath": "C:\\Users\\jlham\\.nuget\\packages\\",
-        "outputPath": "D:\\EZCodeLanguage\\Packages\\WinForms\\WinFormsEZCodeLibrary\\obj\\",
+        "outputPath": "D:\\EZCodeLanguage\\Packages\\WinForms (not working)\\WinFormsEZCodeLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
