@@ -14,3 +14,8 @@ All of System EZCode packages.
      - `avg` average of numbers
      - `operate` everything in MathF from C# class.
 - [WinForms](WinForms/package.json): Adds Windows Forms Support (not currently supported)
+- [HTTP](HTTP/package.json): contains functinality for basic HTTP requests
+  - Methods include:
+    - `install` Install file from url to file
+    - `GET` GET request
+    - `POST` POST request
