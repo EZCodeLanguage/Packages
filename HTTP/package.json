@@ -1,10 +1,10 @@
 {
-    "Name":"io",
+    "Name":"http",
     "Files": [
-        "IO.ezcode"
+        "http.ezcode"
     ],
     "Configuration":{
-        "LibraryDirectory":"io-package\\bin\\Debug\\net8.0\\",
+        "LibraryDirectory":"http\\bin\\Debug\\net8.0\\",
         "GlobalPackages":[
             "main"
         ]

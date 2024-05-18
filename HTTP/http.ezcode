@@ -1,0 +1,11 @@
+class http {
+    method install : @str:url, @str:path {
+        runexec http.dll.Http.HTTP.WebInstall ~> {url}, {path}
+    }
+    method GET : @str:url => @str {
+        return runexec http.dll.Http.HTTP.GET ~> {url}
+    }
+    method POST : @str:url, @str:data, @str:contentType => @str {
+        return runexec http.dll.Http.HTTP.GET ~> {url}, {data}, {contentType}
+    }
+}
