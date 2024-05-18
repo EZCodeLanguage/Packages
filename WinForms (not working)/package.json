@@ -3,5 +3,7 @@
     "Files": [
         "winforms.ezcode"
     ],
-    "LibraryDirectory":"WinFormsEZCodeLibrary\\bin\\Debug\\net8.0-windows\\"
+    "Configuration":{
+        "LibraryDirectory":"WinFormsEZCodeLibrary\\bin\\Debug\\net8.0-windows\\"
+    }
 }

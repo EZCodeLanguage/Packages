@@ -1,0 +1,12 @@
+{
+    "Name":"io",
+    "Files": [
+        "IO.ezcode"
+    ],
+    "Configuration":{
+        "LibraryDirectory":"io-package\\bin\\Debug\\net8.0\\",
+        "GlobalPackages":[
+            "main"
+        ]
+    }
+}

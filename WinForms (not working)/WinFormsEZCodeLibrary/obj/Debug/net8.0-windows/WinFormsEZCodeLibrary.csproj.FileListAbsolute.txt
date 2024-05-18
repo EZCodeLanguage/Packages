@@ -1,9 +1,0 @@
-D:\EZCodeLanguage\Packages\WinForms\WinFormsEZCodeLibrary\obj\Debug\net8.0-windows\refint\WinFormsEZCodeLibrary.dll
-D:\EZCodeLanguage\Packages\WinForms\WinFormsEZCodeLibrary\obj\Debug\net8.0-windows\WinFormsEZCodeLibrary.csproj.AssemblyReference.cache
-D:\EZCodeLanguage\Packages\WinForms\WinFormsEZCodeLibrary\obj\Debug\net8.0-windows\WinFormsEZCodeLibrary.GeneratedMSBuildEditorConfig.editorconfig
-D:\EZCodeLanguage\Packages\WinForms\WinFormsEZCodeLibrary\obj\Debug\net8.0-windows\WinFormsEZCodeLibrary.AssemblyInfoInputs.cache
-D:\EZCodeLanguage\Packages\WinForms\WinFormsEZCodeLibrary\obj\Debug\net8.0-windows\WinFormsEZCodeLibrary.AssemblyInfo.cs
-D:\EZCodeLanguage\Packages\WinForms\WinFormsEZCodeLibrary\obj\Debug\net8.0-windows\WinFormsEZCodeLibrary.csproj.CoreCompileInputs.cache
-D:\EZCodeLanguage\Packages\WinForms\WinFormsEZCodeLibrary\obj\Debug\net8.0-windows\WinFormsEZCodeLibrary.sourcelink.json
-D:\EZCodeLanguage\Packages\WinForms\WinFormsEZCodeLibrary\obj\Debug\net8.0-windows\WinFormsEZCodeLibrary.dll
-D:\EZCodeLanguage\Packages\WinForms\WinFormsEZCodeLibrary\obj\Debug\net8.0-windows\WinFormsEZCodeLibrary.pdb
