@@ -7,7 +7,7 @@ Contains the functionality for basic HTTP requests.
   - `POST` method: POST request.
   
 ```
-http install : github.com/EZCodeLanguage/Packages/releases/download/main-package/Main.zip, D:/path/main.zip
+http install : github.com/EZCodeLanguage/Packages/releases/download/main-package/Main.zip, C:/path/main.zip
 undefined result => http GET : ez-code.web.app
 http POST : url.com, data, contentType
 ```
