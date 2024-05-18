@@ -351,6 +351,17 @@ class expressions {
         }
     }
 }
+class file {
+    method read : @str:path => @str {
+        return runexec EZCodeLanguage.EZHelp.FileRead ~> {path}
+    }
+    method write : @str:path, @str:text => @str {
+        return runexec EZCodeLanguage.EZHelp.FileWrite ~> {path}, {text}
+    }
+    method create : @str:path => @str {
+        return runexec EZCodeLanguage.EZHelp.FileCreate ~> {path}
+    }
+}
 global nocol method print : ! @str:__text {
     runexec EZCodeLanguage.EZHelp.Print ~> {__text}
 }
