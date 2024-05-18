@@ -6,6 +6,6 @@ class http {
         return runexec http.dll.Http.HTTP.GET ~> {url}
     }
     method POST : @str:url, @str:data, @str:contentType => @str {
-        return runexec http.dll.Http.HTTP.GET ~> {url}, {data}, {contentType}
+        return runexec http.dll.Http.HTTP.POST ~> {url}, {data}, {contentType}
     }
 }
