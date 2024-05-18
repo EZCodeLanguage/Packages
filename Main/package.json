@@ -1,9 +1,11 @@
 {
     "Name":"main",
     "Files": [
-        "Main.ezcode",
+        "main.ezcode",
         "lists.ezcode",
-        "math.ezcode"
+        "math.ezcode",
+        "time.ezcode",
+        "environment.ezcode"
     ],
     "Configuration":{
         

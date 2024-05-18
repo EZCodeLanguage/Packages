@@ -244,6 +244,45 @@ class str {
         return runexec EZCodeLanguage.EZHelp.EndsWith ~> {text}, {val}
     }
 }
+class char {
+    explicit typeof => EZCodeLanguage.EZCode.DataType("char")
+    explicit watch \^{CHAR} => set : CHAR
+    explicit params => set : PARAMS
+    undefined Value
+    get => @str {
+        return str parse : Value
+    }
+    get => @bool {
+        return bool parse : Value
+    }
+    method set : ch {
+        = ch
+    }
+    nocol method = : @char:ch => @char {
+        Value => ch
+    }
+    method parse : val => @char {
+        return runexec EZCodeLanguage.EZHelp.StringParse ~> {val}
+    }
+    method length {
+        return stringlength : Value
+    }
+    method stringlength : val {
+        return runexec EZCodeLanguage.EZHelp.StringLength ~> {val}
+    }
+    nocol method != : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, !=, {val}
+    }
+    nocol method == : val => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, =, {val}
+    }
+    method lower : @char:val => @char {
+        return runexec EZCodeLanguage.EZHelp.ToLower ~> {val}
+    }
+    method upper : @char:val => @char {
+        return runexec EZCodeLanguage.EZHelp.ToUpper ~> {val}
+    }
+}
 class var {
     explicit params => set : PARAMS
     undefined Value
@@ -287,6 +326,18 @@ class var {
     }
     get => @str {
         return Value
+    }
+    get => @char {
+        undefined returns 
+        int length new => str stringlength : Value
+        if length != 1 {
+            char c new : Value
+            returns => c
+        }
+        else {
+            throw Can not return type char from var value: Value 
+        }
+        return returns
     }
     get => @bool {
         return runexec EZCodeLanguage.EZHelp.ObjectParse ~> {Value}, bool
@@ -382,4 +433,7 @@ global method istype : __val, __type => @bool {
 }
 global method regexmatch : @str:__val, @str:__match => @bool {
     return runexec EZCodeLanguage.EZHelp.RegexMatch ~> {__val}, {__match}
+}
+global method exit {
+    runexec EZCodeLanguage.EZHelp.Exit
 }
