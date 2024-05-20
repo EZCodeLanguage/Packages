@@ -3,9 +3,7 @@
     "Files": [
         "main.ezcode",
         "lists.ezcode",
-        "math.ezcode",
-        "time.ezcode",
-        "environment.ezcode"
+        "math.ezcode"
     ],
     "Configuration":{
         

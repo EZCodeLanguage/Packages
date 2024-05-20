@@ -437,3 +437,6 @@ global method regexmatch : @str:__val, @str:__match => @bool {
 global method exit {
     runexec EZCodeLanguage.EZHelp.Exit
 }
+global method environment : @str:property, ? val1, val2 {
+    return runexec EZCodeLanguage.EZHelp.EnvironmentOS ~> {property}, {val1}, {val2}
+}
