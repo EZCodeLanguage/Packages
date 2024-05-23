@@ -1,8 +1,8 @@
 # Main
 
 Contains the basic functionality for EZCode (automatically included in build).
-- `bool`, `str`, `float`, `int`, `expressions`, `var`, and `list` classes
-- `print`, `input`, `runcode`, `clear`, `regexmatch`, and `istype` methods
+- `bool`, `str`, `float`, `int`, `char`, `expressions`, `var`, and `list` classes
+- `print`, `input`, `runcode`, `clear`, `regexmatch`, `environment`, and `istype` methods
 - basic math functions including:
   - `add` add numbers
   - `subtract` subtract numbers
@@ -18,6 +18,7 @@ bool b new : True
 str s new : Hello World
 float f new : 1.23
 int i new : 123
+char c new : A
 var v new : any
 list l new : 1;2;3
 (5 * 5) // expression -- explicit watch \((.* {EXP})\)
@@ -35,4 +36,5 @@ pi // returns pi constant
 clamp 50, 10, 100 // clamps number '50' between '10' and '100'
 avg 10, 20, 30, 40, 50, 100000 // returns the average of the numbers
 operate sin, 50 // returns the sin of 50
+str user new => environment : username
 ```

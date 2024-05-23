@@ -2,8 +2,8 @@
 
 All of System EZCode packages. 
 - [Main](Main/package.json): Includes main functionality for EZCode (automatically included in build)
-   - `bool`, `str`, `float`, `int`, `expressions`, `var`, and `list` classes
-   - `print`, `input`, `runcode`, `clear`, `regexmatch`, and `istype` methods
+   - `bool`, `str`, `float`, `int`, `char`, `expressions`, `var`, and `list` classes
+   - `print`, `input`, `runcode`, `clear`, `regexmatch`, `environment`, and `istype` methods
    - basic math functions including:
      - `add` add numbers
      - `subtract` subtract numbers
