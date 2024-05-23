@@ -1,0 +1,13 @@
+{
+    "Name":"time",
+    "Files": [
+        "datetime.ezcode",
+        "timer.ezcode",
+        "stopwatch.ezcode"
+    ],
+    "Configuration":{
+        "GlobalPackages":[
+            "main"
+        ]
+    }
+}

@@ -1,0 +1,156 @@
+class datetime {
+    method now : ? @str:format => @str {
+        return runexec EZCodeLanguage.EZHelp.DateTimeNow ~> {format}
+    }
+    method utcnow : ? @str:format => @str {
+        return runexec EZCodeLanguage.EZHelp.DateTimeUtcNow ~> {format}
+    }
+    method today : ? @str:format => @str {
+        return runexec EZCodeLanguage.EZHelp.DateTimeUtcNow ~> {format}
+    }
+    method compare : @str:_t1, @str:_t2 => @int {
+        return runexec EZCodeLanguage.EZHelp.DateTimeCompare ~> {_t1}, {_t2}
+    }
+    method max-value : ? @str:format => @datetime {
+        return runexec EZCodeLanguage.EZHelp.DateTimeMaxValue ~> {format}
+    }
+    method min-value : ? @str:format => @datetime {
+        return runexec EZCodeLanguage.EZHelp.DateTimeMinValue ~> {format}
+    }
+    method unixepoch : ? @str:format => @datetime {
+        return runexec EZCodeLanguage.EZHelp.DateTimeUnixEpoch ~> {format}
+    }
+    method days-in-month : @int:_year, @int:_month => @int {
+        return runexec EZCodeLanguage.EZHelp.DateTimeDaysInMonth ~> {_year}, {_month}
+    }
+    method is-leep-year : @str:_time => @bool {
+        return runexec EZCodeLanguage.EZHelp.DateTimeIsLeepYear ~> {_time}
+    }
+    method is-daylight-savings-time : @str:_time => @bool {
+        return runexec EZCodeLanguage.EZHelp.DateTimeIsDaylightSavingsTime ~> {_time}
+    }
+    method day-of-year : @str:_time => @int {
+        return runexec EZCodeLanguage.EZHelp.DateTimeDayOfYear ~> {_time}
+    }
+    method day-of-week : @str:_time => @str {
+        return runexec EZCodeLanguage.EZHelp.DateTimeDayOfWeek ~> {_time}
+    }
+}
+
+/* // MANY ERRORS. DECIDED TO REMOVE AND MAKE DATETIME STATIC INSTEAD OF AN OBJECT
+class datetime {
+    int year new : 1
+    int month new : 1
+    int day new : 1
+    int hour new : 1
+    int minute new : 1
+    int second new : 1
+    int milisecond new : 1
+
+    get => @str {
+        return str format : 'month'/'day'/'year' 'hour'\;'minute'\;'second'
+    }
+    method set : @datetime:_dt_ {
+        year => from-val-to-datetime--year : _dt_
+        month => from-val-to-datetime--month : _dt_
+        day => from-val-to-datetime--day : _dt_
+        hour => from-val-to-datetime--hour : _dt_
+        minute => from-val-to-datetime--minute : _dt_
+        second => from-val-to-datetime--second : _dt_
+        milisecond => from-val-to-datetime--milisecond : _dt_
+    }
+    method now : ? @str:format => @datetime {
+        undefined _val => runexec EZCodeLanguage.EZHelp.DateTimeNow ~> {format}
+        datetime _dt new => parse : _val
+        set : _dt
+        return _dt
+    }
+    method utcnow : ? @str:format => @datetime {
+        undefined _val => runexec EZCodeLanguage.EZHelp.DateTimeUtcNow ~> {format}
+        datetime _dt new => parse : _val
+        set : _dt
+        return _dt
+    }
+    method today : ? @str:format => @datetime {
+        undefined _val => runexec EZCodeLanguage.EZHelp.DateTimeUtcNow ~> {format}
+        datetime _dt new => parse : _val
+        set : _dt
+        return _dt
+    }
+    method compare : @datetime:_t1, @datetime:_t2 => @int {
+        return runexec EZCodeLanguage.EZHelp.DateTimeCompare ~> {_t1}, {_t2}
+    }
+    method format : @str:format => @str {
+        return runexec EZCodeLanguage.EZHelp.DateTimeFormat ~> {format}, {year}, {month}, {day}, {hour}, {minute}, {second}, {milisecond}
+    }
+    method parse : @str:val => @datetime {
+        undefined _time => runexec EZCodeLanguage.EZHelp.DateTimeParses ~> {val}
+        int _year new => from-val-to-datetime--year : _time
+        int _month new => from-val-to-datetime--month : _time
+        int _day new => from-val-to-datetime--day : _time
+        int _hour new => from-val-to-datetime--hour : _time
+        int _minute new => from-val-to-datetime--minute : _time
+        int _second new => from-val-to-datetime--second : _time
+        int _milisecond new => from-val-to-datetime--milisecond : _time
+        datetime n new : year:_year, month:_month, day:_day, hour:_hour, minute:_minute, second:_second, milisecond:_milisecond
+        dispose _year, _month, _day, _hour, _minute, _second, _milisecond, _time
+        return n
+    }
+    method from-val-to-datetime--year : @datetime:__time => @int {
+        return runexec EZCodeLanguage.EZHelp.DateTimeTakeYear ~> {__time}
+    }
+    method from-val-to-datetime--month : @datetime:__time => @int {
+        return runexec EZCodeLanguage.EZHelp.DateTimeTakeMonth ~> {__time}
+    }
+    method from-val-to-datetime--day : @datetime:__time => @int {
+        return runexec EZCodeLanguage.EZHelp.DateTimeTakeDay ~> {__time}
+    }
+    method from-val-to-datetime--hour : @datetime:__time => @int {
+        return runexec EZCodeLanguage.EZHelp.DateTimeTakeHour ~> {__time}
+    }
+    method from-val-to-datetime--minute : @datetime:__time => @int {
+        return runexec EZCodeLanguage.EZHelp.DateTimeTakeMinute ~> {__time}
+    }
+    method from-val-to-datetime--second : @datetime:__time => @int {
+        return runexec EZCodeLanguage.EZHelp.DateTimeTakeSecond ~> {__time}
+    }
+    method from-val-to-datetime--milisecond : @datetime:__time => @int {
+        return runexec EZCodeLanguage.EZHelp.DateTimeTakeMilisecond ~> {__time}
+    }
+    method maxvalue : ? @str:format => @datetime {
+        undefined _val => runexec EZCodeLanguage.EZHelp.DateTimeMaxValue ~> {format}
+        datetime _dt new => parse : _val
+        set : _dt
+        return _dt
+    }
+    method minvalue : ? @str:format => @datetime {
+        undefined _val => runexec EZCodeLanguage.EZHelp.DateTimeMinValue ~> {format}
+        datetime _dt new => parse : _val
+        set : _dt
+        return _dt
+    }
+    method unixepoch : ? @str:format => @datetime {
+        undefined _val => runexec EZCodeLanguage.EZHelp.DateTimeUnixEpoch ~> {format}
+        datetime _dt new => parse : _val
+        set : _dt
+        return _dt
+    }
+    method daysinmonth : ? @int:_year -1, @int:_month -1 => @int {
+        if _year == -1 : _year = year
+        if _month == -1 : _month = month
+        return runexec EZCodeLanguage.EZHelp.DateTimeDaysInMonth ~> {_year}, {_month}
+    }
+    method isleepyear => @bool {
+        return runexec EZCodeLanguage.EZHelp.DateTimeIsLeepYear ~> {year}
+    }
+    method isdaylightsavingstime => @bool {
+        return runexec EZCodeLanguage.EZHelp.DateTimeIsDaylightSavingsTime ~> {year}, {month}, {day}
+    }
+    method dayofyear => @int {
+        return runexec EZCodeLanguage.EZHelp.DateTimeDayOfYear ~> {year}, {month}, {day}
+    }
+    method dayofweek => @str {
+        return runexec EZCodeLanguage.EZHelp.DateTimeDayOfWeek ~> {year}, {month}, {day}
+    }
+}
+*/

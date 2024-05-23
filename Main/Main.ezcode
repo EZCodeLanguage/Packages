@@ -11,7 +11,7 @@ class bool {
     nocol method ! {
         Value => runexec EZCodeLanguage.EZHelp.Compare ~> not, {val}
     }
-    method istype : val => @bool {
+    method is-type : val => @bool {
         try {
             runexec EZCodeLanguage.EZHelp.BoolParse ~> {val}
             return true
@@ -49,7 +49,7 @@ class float {
     nocol method ^ : @float:val {
         Value => runexec EZCodeLanguage.EZHelp.Power ~> {Value}, {val}
     }
-    method istype : val => @bool {
+    method is-type : val => @bool {
         try {
             runexec EZCodeLanguage.EZHelp.FloatParse ~> {val}
             return true
@@ -105,7 +105,7 @@ class int {
     nocol method ^ : @float:val {
         Value => runexec EZCodeLanguage.EZHelp.Power ~> {Value}, {val}
     }
-    method istype : val => @bool {
+    method is-type : val => @bool {
         try {
             runexec EZCodeLanguage.EZHelp.IntParse ~> {val}
             return true
@@ -167,9 +167,9 @@ class str {
         return runexec EZCodeLanguage.EZHelp.StringParse ~> {val}
     }
     method length {
-        return stringlength : Value
+        return string-length : Value
     }
-    method stringlength : val {
+    method string-length : val {
         return runexec EZCodeLanguage.EZHelp.StringLength ~> {val}
     }
     nocol method < : val => @bool {
@@ -179,7 +179,7 @@ class str {
             comp_length = val
         }
         fail {
-            comp_length = stringlength : val
+            comp_length = string-length : val
         }
         return runexec EZCodeLanguage.EZHelp.Compare ~> {length}, <, {val}
     }
@@ -190,7 +190,7 @@ class str {
             comp_length = val
         }
         fail {
-            comp_length = stringlength : val
+            comp_length = string-length : val
         }
         return runexec EZCodeLanguage.EZHelp.Compare ~> {length}, >, {val}
     }
@@ -201,7 +201,7 @@ class str {
             comp_length = val
         }
         fail {
-            comp_length = stringlength : val
+            comp_length = string-length : val
         }
         return runexec EZCodeLanguage.EZHelp.Compare ~> {length}, <=, {val}
     }
@@ -212,7 +212,7 @@ class str {
             comp_length = val
         }
         fail {
-            comp_length = stringlength : val
+            comp_length = string-length : val
         }
         return runexec EZCodeLanguage.EZHelp.Compare ~> {length}, >=, {val}
     }
@@ -237,10 +237,10 @@ class str {
     method substring : @str:text, @int:index, @int:length => @str {
         return runexec EZCodeLanguage.EZHelp.Substring ~> {text}, {index}, {length}
     }
-    method startswith : @str:text, @str:val => @bool {
+    method starts-with : @str:text, @str:val => @bool {
         return runexec EZCodeLanguage.EZHelp.StartsWith ~> {text}, {val}
     }
-    method endswith : @str:text, @str:val => @bool {
+    method ends-with : @str:text, @str:val => @bool {
         return runexec EZCodeLanguage.EZHelp.EndsWith ~> {text}, {val}
     }
 }
@@ -262,13 +262,7 @@ class char {
         Value => ch
     }
     method parse : val => @char {
-        return runexec EZCodeLanguage.EZHelp.StringParse ~> {val}
-    }
-    method length {
-        return stringlength : Value
-    }
-    method stringlength : val {
-        return runexec EZCodeLanguage.EZHelp.StringLength ~> {val}
+        return runexec EZCodeLanguage.EZHelp.CharParse ~> {val}
     }
     nocol method != : val => @bool {
         return runexec EZCodeLanguage.EZHelp.Compare ~> {Value}, !=, {val}
@@ -329,7 +323,7 @@ class var {
     }
     get => @char {
         undefined returns 
-        int length new => str stringlength : Value
+        int length new => str string-length : Value
         if length != 1 {
             char c new : Value
             returns => c
@@ -419,7 +413,7 @@ class file {
 global nocol method print : ! @str:__text {
     runexec EZCodeLanguage.EZHelp.Print ~> {__text}
 }
-global method runcode : @str:__code {
+global method run-code : @str:__code {
     runexec EZCodeLanguage.EZHelp.RunEZCode ~> {__code}
 }
 global method clear {
@@ -428,10 +422,10 @@ global method clear {
 global method input => @str {
     return runexec EZCodeLanguage.EZHelp.Input
 }
-global method istype : __val, __type => @bool {
+global method is-type : __val, __type => @bool {
     return runexec EZCodeLanguage.EZHelp.IsType ~> {__val}, {__type}
 }
-global method regexmatch : @str:__val, @str:__match => @bool {
+global method regex-match : @str:__val, @str:__match => @bool {
     return runexec EZCodeLanguage.EZHelp.RegexMatch ~> {__val}, {__match}
 }
 global method exit {
