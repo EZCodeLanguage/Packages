@@ -16,8 +16,11 @@ global nocol method avg : ! @float:nums => @float {
 global nocol method clamp : @float:val, @float:min, @float:max => @float {
     return runexec EZCodeLanguage.EZHelp.Clamp ~> {val}, {min}, {max}
 }
-global nocol method random : @float:min, @float:max => @float {
+global nocol method random : @float:min, @float:max => @int {
     return runexec EZCodeLanguage.EZHelp.RandomNumber ~> {min}, {max}
+}
+global nocol method round-to-int : @float:num => @int {
+    return runexec EZCodeLanguage.EZHelp.RoundToInt ~> {num}
 }
 global method pi => @float {
     return runexec EZCodeLanguage.EZHelp.Pi

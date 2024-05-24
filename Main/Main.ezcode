@@ -11,6 +11,9 @@ class bool {
     nocol method ! {
         Value => runexec EZCodeLanguage.EZHelp.Compare ~> not, {val}
     }
+    method oposite : @bool:__bol => @bool {
+        return runexec EZCodeLanguage.EZHelp.Compare ~> not, {__bol}
+    }
     method is-type : val => @bool {
         try {
             runexec EZCodeLanguage.EZHelp.BoolParse ~> {val}

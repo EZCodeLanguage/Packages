@@ -1,3 +1,25 @@
 class stopwatch {
-    
+    undefined Value
+
+    method start {
+        Value => runexec EZCodeLanguage.EZHelp.StopwatchStart 
+    }
+    method end {
+        return runexec EZCodeLanguage.EZHelp.StopwatchEnd ~> {Value}
+    }
+    method elapsed-nanoseconds => @float {
+        return runexec EZCodeLanguage.EZHelp.StopwatchElapsedNanoseconds ~> {Value}
+    }
+    method elapsed-miliseconds => @float {
+        return runexec EZCodeLanguage.EZHelp.StopwatchElapsedMiliseconds ~> {Value}
+    }
+    method elapsed-seconds => @float {
+        return runexec EZCodeLanguage.EZHelp.StopwatchElapsedSeconds ~> {Value}
+    }
+    method elapsed-minutes => @float {
+        return runexec EZCodeLanguage.EZHelp.StopwatchElapsedMinutes ~> {Value}
+    }
+    method elapsed-hours => @float {
+        return runexec EZCodeLanguage.EZHelp.StopwatchElapsedHours ~> {Value}
+    }
 }

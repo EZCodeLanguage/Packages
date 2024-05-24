@@ -1,0 +1,26 @@
+class timer {
+    undefined Value
+
+    int hours new : 0
+    int minutes new : 0
+    int seconds new : 0
+    int miliseconds new : 0
+
+    method new-instance : @int:_hours, @int:_minutes, @int:_seconds, @int:_miliseconds => @timer {
+        return runexec EZCodeLanguage.EZHelp.TimerNewInstance ~> {_hours}, {_minutes}, {_seconds}, {_miliseconds}
+    }
+    method start {
+        Value => new-instance : hours, minutes, seconds, miliseconds
+        runexec EZCodeLanguage.EZHelp.TimerStart ~> {Value}
+    }
+    method stop {
+        runexec EZCodeLanguage.EZHelp.TimerStop ~> {Value}
+    }
+    method is-done => @bool {
+        return runexec EZCodeLanguage.EZHelp.TimerIsDone ~> {Value}
+    }
+    method is-not-done => @bool {
+        bool _t new => is-done
+        return bool oposite : _t
+    }
+}
