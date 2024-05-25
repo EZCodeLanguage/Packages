@@ -10,7 +10,7 @@ All of System EZCode packages.
     - `install` Install file from url to file
     - `GET` GET request
     - `POST` POST request
-- [Time](Time/package.json): Adds classes for time related functions
+- [Time](time/package.json): Adds classes for time related functions
   - `datetime` class is a container for date and time related functions
   - `stopwatch` class for stopwatches
   - `timer` class for timers 
