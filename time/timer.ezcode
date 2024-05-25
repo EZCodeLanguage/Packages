@@ -16,6 +16,9 @@ class timer {
     method stop {
         runexec EZCodeLanguage.EZHelp.TimerStop ~> {Value}
     }
+    method resume {
+        runexec EZCodeLanguage.EZHelp.TimerStart ~> {Value}
+    }
     method is-done => @bool {
         return runexec EZCodeLanguage.EZHelp.TimerIsDone ~> {Value}
     }
