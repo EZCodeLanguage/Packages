@@ -1,0 +1,12 @@
+{
+    "Name":"windows-os",
+    "Files": [
+        "registry.ezcode",
+        "process.ezcode"
+    ],
+    "Configuration":{
+        "GlobalPackages":[
+            "main"
+        ]
+    }
+}

@@ -1,6 +1,7 @@
 # Timer
 
 Contains classes for time related functions and objects.
+- `await` method: pauses program for miliseconds `await @int:miliseconds` 
 - `datetime` class:
   - Methods:
     - `now` returns the current date and time as a string along with optional parameter to format it `datetime now : ? @str:format`

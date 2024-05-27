@@ -1,0 +1,53 @@
+# Windows-OS
+
+This package includes `process` and `registry` classes
+- `registry`:
+  - `set-key`: This method sets a string value into the registry.
+    - `set-key : @str:keyPath, @str:key, @str:value`
+      - `keyPath`: The path of the Registry
+      - `key`: The key name set in the path
+      - `value` The value to be set in the registry
+  - `get-key`: This method gets a value from the registry.
+    - `get-key : @str:keyPath, @str:key => @str`
+      - `keyPath`: The path of the Registry
+      - `key`: The key name to get in the path
+  - `local-machine`: Returns the Local Machine Registry Path
+    - `local-machine => @str`
+  - `current-user`: Returns the Current User Registry Path
+    - `current-user => @str`
+  - `users`: Returns the registry Path of all of the users
+    - `users => @str`
+  - `classes-root`: Returns the registry path of the classes root
+    - `classes-root => @str`
+  - `current-config`: Returns the registry path of the current config
+    - `current-config => @str`
+  - `performance-data`: Returns the registry path of the performance data
+    - `performance-data => @str`
+- `process`:
+  - `start`: Starts a process from path and returns process instance
+    - `start : @str:path, ? @str:arguments => @process`
+      - `path`: Path to executable
+      - `arguments` Any arguments with it
+  - `name`: Returns the Process instance's name
+    - `name => @str`
+  - `kill`: Kills the process instance
+    - `kill`
+  - `get-property`: Gets a property from the process instance using C# reflection and returns it
+    - `get-property : @str:propName` 
+      - `properName`: The name of the property
+  - `run-function`: Runs the function from the process instance using C# reflection and returns it
+    - `run-function : @str:funcName`
+      - `funcName`: The function name to run
+  - `get-current-process`: Retuns the current process
+    - `get-current-process => @process`
+  - `get-process-by-id`: Returns a C# System.Diagnostics.Process class instance from the process ID
+    - `get-process-by-id : @int:_id, ? @str:_machineName`
+      - `_id`: The Process ID
+      - `_machineName`: The machine's name to check on
+  - `get-processes`: Returns an array of the C# System.Diagnostics.Process class of every Process running
+    - `get-processes : ? @str:_machineName`
+      - `_machineName`: The machine to get processes from
+  - `get-processes-by-name`: Returns a C# System.Diagnostics.Process class instance from the process name
+    - `get-processes-by-name : @str:_name ? @str:_machineName`
+      - `_name`: The Process name
+      - `_machineName`: The machine's name to check on

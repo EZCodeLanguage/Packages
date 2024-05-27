@@ -27,3 +27,10 @@ class timer {
         return bool oposite : _t
     }
 }
+nocol method await : @int:_miliseconds {
+    timer __t new : miliseconds:_miliseconds
+    __t start
+    loop __t is-not-done {
+
+    }
+}
