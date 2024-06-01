@@ -1,0 +1,45 @@
+class array {
+    undefined Value
+    method get-value : @int:index {
+        return runexec EZCodeLanguage.EZHelp.ArrayGetIndex ~> {Value}, {index}
+    }
+    method set-value : @int:index, value {
+        runexec EZCodeLanguage.EZHelp.ArraySetIndex ~> {Value}, {index}, {value}
+    }
+    method append : value {
+        Value => runexec EZCodeLanguage.EZHelp.ArrayAppends ~> {Value}, {value}
+    }
+    method prepend : value {
+        Value => runexec EZCodeLanguage.EZHelp.ArrayPrepends ~> {Value}, {value}
+    }
+    method length => @int {
+        return runexec EZCodeLanguage.EZHelp.ArrayLength ~> {Value}
+    }
+    method hashcode => @int {
+        return runexec EZCodeLanguage.EZHelp.ArrayHashCodes ~> {Value}
+    }
+    method first {
+        return runexec EZCodeLanguage.EZHelp.ArrayFirst ~> {Value}
+    }
+    method last {
+        return runexec EZCodeLanguage.EZHelp.ArrayLast ~> {Value}
+    }
+    method to-list => @list {
+        list li new 
+        int i new : 0
+        loop length {
+            li append : get-index : i
+        }
+        return li
+    }
+
+    method get-array : _array => @array {
+        return runexec EZCodeLanguage.EZHelp.ArrayGetArray ~> {_array}
+    }
+    method generate-array : ? @int:length => @array {
+        return runexec EZCodeLanguage.EZHelp.ArrayGenerateArray ~> {length}
+    }
+    method split : @str:_text, @str:_splitter => @array {
+        return runexec EZCodeLanguage.EZHelp.ArraySplitString ~> {_text}, {_splitter}
+    }
+}

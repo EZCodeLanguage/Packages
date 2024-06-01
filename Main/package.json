@@ -1,11 +1,9 @@
 {
+    "$schema":"https://raw.githubusercontent.com/EZCodeLanguage/Packages/main/ezcode.package.schema.json",
     "Name":"main",
     "Files": [
         "main.ezcode",
-        "lists.ezcode",
+        "array.ezcode",
         "math.ezcode"
-    ],
-    "Configuration":{
-        
-    }
+    ]
 }
