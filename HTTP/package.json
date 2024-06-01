@@ -1,4 +1,5 @@
 {
+    "$schema":"https://raw.githubusercontent.com/EZCodeLanguage/Packages/main/ezcode.package.schema.json",
     "Name":"http",
     "Files": [
         "http.ezcode"
