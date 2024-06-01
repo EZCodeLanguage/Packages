@@ -1,26 +1,26 @@
 class registry {
     method set-key : @str:keyPath, @str:key, @str:value {
-        runexec EZCodeLanguage.EZHelp.RegistrySetKey ~> {keyPath}, {key}, {value}
+        runexec Windows_OS.dll.Windows_OS.OS.RegistrySetKey ~> {keyPath}, {key}, {value}
     }
     method get-key : @str:keyPath, @str:key => @str {
-        return runexec EZCodeLanguage.EZHelp.RegistryGetKey ~> {keyPath}, {key}
+        return runexec Windows_OS.dll.Windows_OS.OS.RegistryGetKey ~> {keyPath}, {key}
     }
     method local-machine => @str {
-        return runexec EZCodeLanguage.EZHelp.RegistryLocalMachine
+        return runexec Windows_OS.dll.Windows_OS.OS.RegistryLocalMachine
     }
     method current-user => @str {
-        return runexec EZCodeLanguage.EZHelp.RegistryCurrentUser
+        return runexec Windows_OS.dll.Windows_OS.OS.RegistryCurrentUser
     }
     method users => @str {
-        return runexec EZCodeLanguage.EZHelp.RegistryUsers
+        return runexec Windows_OS.dll.Windows_OS.OS.RegistryUsers
     }
     method classes-root => @str {
-        return runexec EZCodeLanguage.EZHelp.RegistryClassesRoot
+        return runexec Windows_OS.dll.Windows_OS.OS.RegistryClassesRoot
     }
     method current-config => @str {
-        return runexec EZCodeLanguage.EZHelp.RegistryCurrentConfig
+        return runexec Windows_OS.dll.Windows_OS.OS.RegistryCurrentConfig
     }
     method performance-data => @str {
-        return runexec EZCodeLanguage.EZHelp.RegistryPerformanceData
+        return runexec Windows_OS.dll.Windows_OS.OS.RegistryPerformanceData
     }
 }

@@ -1,11 +1,12 @@
 {
-    "$schema":"https://raw.githubusercontent.com/microsoft/vscode-css-languageservice/master/docs/customData.schema.json",
+    "$schema":"https://raw.githubusercontent.com/EZCodeLanguage/Packages/main/ezcode.package.schema.json",
     "Name":"windows-os",
     "Files": [
         "registry.ezcode",
         "process.ezcode"
     ],
     "Configuration":{
+        "LibraryDirectory": "Windows_OS/bin/Release/net8.0/",
         "GlobalPackages":[
             "main"
         ]

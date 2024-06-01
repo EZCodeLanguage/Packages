@@ -6,32 +6,32 @@ class process {
     }
 
     method name => @str {
-        return runexec EZCodeLanguage.EZHelp.ProcessName ~> {Value}
+        return runexec Windows_OS.dll.Windows_OS.OS.ProcessName ~> {Value}
     }
     method kill {
-        runexec EZCodeLanguage.EZHelp.ProcessKill ~> {Value}
+        runexec Windows_OS.dll.Windows_OS.OS.ProcessKill ~> {Value}
     }
     method get-property : @str:propName {
-        return runexec EZCodeLanguage.EZHelp.ProcessGetProperty ~> {Value}, {propName}
+        return runexec Windows_OS.dll.Windows_OS.OS.ProcessGetProperty ~> {Value}, {propName}
     }
     method run-function : @str:funcName {
-        return runexec EZCodeLanguage.EZHelp.ProcessRunFunction ~> {Value}, {funcName}
+        return runexec Windows_OS.dll.Windows_OS.OS.ProcessRunFunction ~> {Value}, {funcName}
     }
 
     method start : @str:path, ? @str:arguments => @process {
-        return runexec EZCodeLanguage.EZHelp.ProcessStart ~> {path}, {arguments}
+        return runexec Windows_OS.dll.Windows_OS.OS.ProcessStart ~> {path}, {arguments}
     }
 
     method get-current-process => @process {
-        return runexec EZCodeLanguage.EZHelp.ProcessGetCurrentProcess
+        return runexec Windows_OS.dll.Windows_OS.OS.ProcessGetCurrentProcess
     }
     method get-process-by-id : @int:_id, ? @str:_machineName {
-        return runexec EZCodeLanguage.EZHelp.ProcessGetProcessById ~> {_id}, {_machineName}
+        return runexec Windows_OS.dll.Windows_OS.OS.ProcessGetProcessById ~> {_id}, {_machineName}
     }
     method get-processes : ? @str:_machineName {
-        return runexec EZCodeLanguage.EZHelp.ProcessGetProcesses ~> {_machineName}
+        return runexec Windows_OS.dll.Windows_OS.OS.ProcessGetProcesses ~> {_machineName}
     }
     method get-processes-by-name : @str:_name ? @str:_machineName {
-        return runexec EZCodeLanguage.EZHelp.ProcessGetProcessesByName ~> {_name}, {_machineName}
+        return runexec Windows_OS.dll.Windows_OS.OS.ProcessGetProcessesByName ~> {_name}, {_machineName}
     }
 }
