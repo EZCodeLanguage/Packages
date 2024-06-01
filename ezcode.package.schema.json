@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Project",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "Files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "Configuration": {
+      "type": "object",
+      "properties": {
+        "LibraryDirectory": {
+          "type": "string",
+          "nullable": true
+        },
+        "GlobalPackages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "nullable": true
+        }
+      },
+      "required": [],
+      "nullable": true
+    }
+  },
+  "required": ["Name", "Files"]
+}
