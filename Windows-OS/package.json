@@ -1,4 +1,5 @@
 {
+    "$schema":"https://raw.githubusercontent.com/microsoft/vscode-css-languageservice/master/docs/customData.schema.json",
     "Name":"windows-os",
     "Files": [
         "registry.ezcode",
