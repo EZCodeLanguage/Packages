@@ -1,5 +1,7 @@
 # Main
 
+Go to [EZCode docs](https://github.com/EZCodeLanguage/EZCode/blob/master/docs/README.md) for more details on Main Package
+
 Contains the basic functionality for EZCode (automatically included in build).
 - `bool`, `str`, `float`, `int`, `char`, `expressions`, `var`, and `list` classes
 - `print`, `input`, `runcode`, `clear`, `regexmatch`, `environment`, and `istype` methods. Basic global math functions
