@@ -1,0 +1,7 @@
+include sfml
+
+window wind new : title:TESTING
+wind open
+loop wind is-open {
+    print Is Open
+}

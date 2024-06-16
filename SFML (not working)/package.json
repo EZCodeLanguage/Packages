@@ -1,0 +1,13 @@
+{
+    "$schema":"https://raw.githubusercontent.com/EZCodeLanguage/Packages/main/ezcode.package.schema.json",
+    "Name":"sfml",
+    "Files": [
+        "sfml.ezcode"
+    ],
+    "Configuration":{
+        "LibraryDirectory": "sfml_ez/bin/Release/net8.0/",
+        "GlobalPackages":[
+            "main"
+        ]
+    }
+}

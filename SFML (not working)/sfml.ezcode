@@ -1,0 +1,12 @@
+class window {
+    undefined Value 
+    int width new : 600
+    int height new : 400
+    str title new 
+    method open {
+        Value => runexec SFML_EZ.dll.SFML_EZ.Main.CreateWindow ~> {width}, {height}, {title}
+    }
+    method is-open => @bool {
+        return runexec SFML_EZ.dll.SFML_EZ.Main.WindowIsOpen ~> {Value}
+    }
+}
