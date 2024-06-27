@@ -3,7 +3,7 @@
 Go to [EZCode docs](https://github.com/EZCodeLanguage/EZCode/blob/master/docs/README.md) for more details on Main Package
 
 Contains the basic functionality for EZCode (automatically included in build).
-- `bool`, `str`, `float`, `int`, `char`, `expressions`, `var`, and `list` classes
+- `bool`, `str`, `float`, `int`, `char`, `expressions`, `var`, and `array` classes
 - `print`, `input`, `runcode`, `clear`, `regexmatch`, `environment`, and `istype` methods. Basic global math functions
   
 ```
@@ -13,7 +13,7 @@ float f new : 1.23
 int i new : 123
 char c new : A
 var v new : any
-list l new : 1;2;3
+array ar new => array split : 1;2;3, ;
 (5 * 5) // expression -- explicit watch \((.* {EXP})\)
 print Hello World! // prints to console
 input // waits for the user to input
