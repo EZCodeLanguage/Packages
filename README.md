@@ -2,7 +2,7 @@
 
 All of System EZCode packages. 
 - [Main](Main/README.md): Includes main functionality for EZCode (automatically included in build)
-   - `bool`, `str`, `float`, `int`, `char`, `expressions`, `var`, and `list` classes
+   - `bool`, `str`, `float`, `int`, `char`, `expressions`, `var`, and `array` classes
    - `print`, `input`, `runcode`, `clear`, `regexmatch`, `environment`, and `istype` methods. Basic global math functions
 - [WinForms](WinForms%20(not%20working)/README.md): Adds Windows Forms Support (not currently supported)
 - [HTTP](HTTP/README.md): Contains functinality for basic HTTP requests
